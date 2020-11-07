@@ -1,0 +1,8 @@
+body {
+    background-color:#333;
+    margin-top:18px
+}
+
+.pic {
+   width:30%;height:30%;  position: relative;left: 20%
+}

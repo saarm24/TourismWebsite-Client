@@ -1,0 +1,67 @@
+<html>
+<head>
+    <title>My Website</title>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="App.css" rel="stylesheet">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="AppCtrl">
+<!-- load angular -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.js"></script>
+<script src="https://code.angularjs.org/1.7.8/angular-route.js"></script>
+
+<!-- load app -->
+<script src="app.js"></script>
+
+<!-- load controllers -->
+<script src="pages/AfterLogin/AfterLoginController.js"></script>
+<script src="pages/register/registerController.js"></script>
+<script src="pages/Login/LoginController.js"></script>
+<script src="pages/RetrievePassword/RetrievePasswordController.js"></script>
+<script src="pages/About/AboutController.js"></script>
+<script src="pages/POIS/POISController.js"></script>
+<script src="pages/POI/POIController.js"></script>
+<script src="pages/Favorites/FavoritesController.js"></script>
+<script src="pages/Home/HomeController.js"></script>
+
+<!-- menu -->
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+            <ul class="nav navbar-nav">
+                <li><a href="#!Home">
+                    <span class="glyphicon glyphicon-home"></span>
+                    </a>
+                </li>
+                <li><a href="#!POIS">View Points</a></li>
+                <li><a href="#!About">About</a></li>
+                <li><a href="#!Favorites" ng-show="loggedIn">Favorites Points-{{favoritesPointsCount}}</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#!Login" ng-hide="loggedIn">Login</a></li>
+                <li><a href="#!register" ng-hide="loggedIn">Register</a></li>
+                <li><a href="#!RetrievePassword" ng-hide="loggedIn">RetrievePassword</a></li>
+                <li><a href="#" id="welcomeHref">Hello {{user}}!</a></li>
+                <li><a href="#" ng-show="loggedIn" ng-click="logout()">Logout</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div ng-view>
+   <br>
+</div>
+</body>
+</html>
